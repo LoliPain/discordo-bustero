@@ -1,0 +1,3 @@
+# pep 103
+*.py text
+*.txt text eol=crlf
