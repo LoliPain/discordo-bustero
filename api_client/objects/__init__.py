@@ -1,3 +1,3 @@
-from .abstract import AbstractClientObj, Content
+from .abstract import AbstractClientObj, Content, Entity
 
-__all__ = ("AbstractClientObj", "Content")
+__all__ = ("AbstractClientObj", "Content", "Entity")

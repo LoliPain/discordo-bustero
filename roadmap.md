@@ -1,6 +1,6 @@
 # Requests base
-- [ ] API Request class
-- - [ ] Send message def
+- [ ] API Request class 
+- - [x] Send message def `<- devexp`
 - - [ ] Send reaction def
 
 ---------

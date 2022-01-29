@@ -2,34 +2,40 @@ import typing
 from abc import ABC, abstractmethod
 import requests
 
-from api_client.objects import Content
+from api_client.objects import Content, Entity
 
 
 class AbstractRequestBase(ABC):
-    """Minimal API Request class"""
+    """Minimal API Request creator"""
 
     @abstractmethod
     def collect_content(
             self,
-            message_body: str = '',
-            reaction: str = ''
+            message_body: typing.Optional[str] = '',
+            reaction: typing.Optional[str] = ''
     ) -> Content:
         """Request content collector
 
         :param message_body: Plain text :str for message that should be converted to JSON object
         :param reaction: SymID :str for direct reaction request should be converted to http-escaped string
+
+        :return: :Content with prepared for sending JSON :dict or escaped SymID :str
+
         """
 
     @abstractmethod
     def collect_request(
             self,
-            headers: typing.Dict[str, str],
-            action: Content,
-            content: Content = None,
+            headers: Entity,
+            action: Entity,
+            content: Content,
     ) -> requests.Request:
-        """Request data collector
+        """Request collector
 
-        :param headers: Request headers :dict
-        :param action: Plain url :str or {method: method, url: url} :dict
-        :param content: JSON :dict | SymID :str or empty for GET requests
+        :param headers: Headers :Entity with scope :tuple and Request.headers :dict
+        :param action: Action :Entity with scope :tuple and :dict Request.method, Request.url
+        :param content: Request.data :Content with JSON :dict or SymID :str
+
+        :return: Compiled request :requests.Request
+
         """
