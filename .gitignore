@@ -1,0 +1,6 @@
+# vim temp
+*.swp
+*.swo
+
+# pep 3147
+**/__pycache__/*.pyc
