@@ -7,7 +7,7 @@
 ![](https://img.shields.io/static/v1?style=flat&logo=python&label=Python&message=>3.7&color=5865f2)
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
-###Master branch
+### Master branch
 
 Wanna be the coolest member of discord server? ***El Discordo Bustero*** will help you!
 
@@ -46,9 +46,9 @@ Discordo default case after first launch is:
 
 ## What is all this for?
 
-####TLDR: `stack accounts, farm server-bot level`
+#### TLDR: `stack accounts, farm server-bot level`
 
-###Explained case:
+### Explained case:
 - Some server features unlock only after reaching some [activity level](https://lolipa.in/static/img/opera_l1Ew8xOtaT.png).
 - - If you need many boosted level accounts you can feel free to use it.
 - Server fake activity.
