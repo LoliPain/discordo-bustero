@@ -7,7 +7,7 @@
 ![](https://img.shields.io/static/v1?style=flat&logo=python&label=Python&message=>3.7&color=5865f2)
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
-###Development Experimental branch (Pre-Alpha) 
+### Development Experimental branch (Pre-Alpha) 
 
 Wanna be the coolest member of discord server? ***El Discordo Bustero*** will help you!
 
@@ -30,8 +30,9 @@ There's:
 - [x] Workfiles in repo _(like devlog* and roadmap*)_
 - [x] Builds *(nightly)*
 
-####*[devlogs.md](devlogs.md) `researching notes`
-####*[roadmap.md](roadmap.md) `release milestone`
+#### *[devlogs.md](devlogs.md) `researching notes`
+
+#### *[roadmap.md](roadmap.md) `release milestone`
 
 ## Contributing
 
