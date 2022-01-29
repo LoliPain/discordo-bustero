@@ -50,7 +50,7 @@
 > > - String:
 > > - - Unique randomID for event that preventing double intercations *(??)*
 
-> "tts" @REQUIRED
+> "tts" `REQUIRED`
 > > - Bool
 > > - - Enables/Disables text to speech feature reading "content" text
 

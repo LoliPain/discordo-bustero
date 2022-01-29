@@ -3,4 +3,4 @@
 *.swo
 
 # pep 3147
-__pycache__/*.pyc
+**/__pycache__/*.pyc
