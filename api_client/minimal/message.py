@@ -7,7 +7,6 @@ from .message_json import content_to_json, MESSAGE_JSON
 
 class MinimalMessage(AbstractRequestBase):
     """Minimal Message request creator"""
-
     def collect_content(
             self,
             message_body: typing.Optional[str] = '',
@@ -19,9 +18,7 @@ class MinimalMessage(AbstractRequestBase):
         :param reaction: (Unused)
 
         :return: :Content with prepared for sending JSON
-
         """
-
         return content_to_json(MESSAGE_JSON, message_body)
 
     def collect_request(
@@ -38,9 +35,7 @@ class MinimalMessage(AbstractRequestBase):
         :param content: Request.data :Content with prepared for sending JSON :dict
 
         :return: Compiled message request :requests.Request
-
         """
-
         if (
                 __name__ in action.get('scope', ()) and
                 __name__ in headers.get('scope', ())

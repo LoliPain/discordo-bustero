@@ -9,9 +9,7 @@ class AbstractClientObj(ABC):
     """Object of API Client
 
     :param scope: Scope of object responsibility :tuple
-
     """
-
     scope: tuple
 
     @property
@@ -20,7 +18,6 @@ class AbstractClientObj(ABC):
         """Unique content of ClientObj
 
         :return: Formed :Content request data
-
         """
 
     @property
@@ -28,7 +25,5 @@ class AbstractClientObj(ABC):
         """Collect attributes of ClientObj
 
         :return: :Entity dict with ClientObj.scope :tuple and _ClientObj.content
-
         """
-
         return {'scope': self.scope, 'content': self.content}

@@ -7,7 +7,6 @@ from api_client.objects import Content, Entity
 
 class AbstractRequestBase(ABC):
     """Minimal API Request creator"""
-
     @abstractmethod
     def collect_content(
             self,
@@ -20,7 +19,6 @@ class AbstractRequestBase(ABC):
         :param reaction: SymID :str for direct reaction request should be converted to http-escaped string
 
         :return: :Content with prepared for sending JSON :dict or escaped SymID :str
-
         """
 
     @abstractmethod
@@ -37,5 +35,4 @@ class AbstractRequestBase(ABC):
         :param content: Request.data :Content with JSON :dict or SymID :str
 
         :return: Compiled request :requests.Request
-
         """

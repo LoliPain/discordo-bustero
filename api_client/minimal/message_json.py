@@ -23,9 +23,7 @@ def content_to_json(
     :param nonce: Unique ID :int for message
 
     :return: :Content with prepared for sending JSON
-
     """
-
     if tts:
         message["tts"] = str(tts).lower()
     if not nonce:
