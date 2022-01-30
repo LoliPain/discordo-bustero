@@ -6,7 +6,7 @@ import requests
 
 from api_client import AbstractRequestBase, Content, Entity
 
-CUSTOM_EMOJI_PATTERN: str = r"^([^.\: ]+:[0-9]+$)"
+CUSTOM_EMOJI_PATTERN: str = r"([^.\: ]+:[0-9]+$)"
 EMOJI_PATTERN: str = (
     "^(["
     "\U0001F1E0-\U0001F1FF"  # flags (iOS)
@@ -21,10 +21,8 @@ EMOJI_PATTERN: str = (
     "\U0001FA70-\U0001FAFF"  # Symbols and Pictographs Extended-A
     "\U00002702-\U000027B0"  # Dingbats
     "\U000024C2-\U0001F251"
-    "]+)$"
+    "]+)"
 )
-
-emoji_pattern_list: tuple = (CUSTOM_EMOJI_PATTERN, EMOJI_PATTERN)
 
 
 class MinimalReaction(AbstractRequestBase):
@@ -34,7 +32,7 @@ class MinimalReaction(AbstractRequestBase):
 
         :ivar self.pattern: Regex pattern for string validation :re.Pattern
         """
-        self.pattern: re.Pattern = re.compile("|".join(emoji_pattern_list), re.UNICODE)
+        self.pattern: re.Pattern = re.compile(f'^{CUSTOM_EMOJI_PATTERN}|{EMOJI_PATTERN}$', re.UNICODE)
 
     def collect_content(
             self,
