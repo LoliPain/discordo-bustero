@@ -8,9 +8,16 @@ Entity = typing.Dict[str, typing.Union[tuple, Content]]
 class AbstractClientObj(ABC):
     """Object of API Client
 
-    :param scope: Scope of object responsibility :tuple
+    :var scope: Scope of object responsibility :tuple
     """
     scope: tuple
+
+    @abstractmethod
+    def __init__(self, **kwargs: typing.Any):
+        """Create client object
+
+        :param kwargs: Content-based params :typing.Any
+        """
 
     @property
     @abstractmethod
