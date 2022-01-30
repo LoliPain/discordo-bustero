@@ -4,7 +4,8 @@ from urllib.parse import quote_plus
 
 import requests
 
-from api_client import AbstractRequestBase, Content, Entity
+from .abstract import AbstractRequestBase
+from ..api_types import Content, Entity
 
 CUSTOM_EMOJI_PATTERN: str = r"([^.\: ]+:[0-9]+$)"
 EMOJI_PATTERN: str = (
@@ -27,6 +28,7 @@ EMOJI_PATTERN: str = (
 
 class MinimalReaction(AbstractRequestBase):
     """Minimal Reaction request creator"""
+
     def __init__(self):
         """Create reaction object
 

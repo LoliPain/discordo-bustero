@@ -1,8 +1,7 @@
 import typing
 from abc import ABC, abstractmethod
 
-Content = typing.Union[typing.Dict[str, str], str]
-Entity = typing.Dict[str, typing.Union[tuple, Content]]
+from ..api_types import Content, Entity
 
 
 class AbstractClientObj(ABC):

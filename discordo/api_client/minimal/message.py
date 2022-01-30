@@ -2,11 +2,13 @@ import typing
 
 import requests
 
-from api_client import AbstractRequestBase, Content, Entity
+from .abstract import AbstractRequestBase
+from ..api_types import Content, Entity
 
 
 class MinimalMessage(AbstractRequestBase):
     """Minimal Message request creator"""
+
     def __init__(self):
         """Create message object
 

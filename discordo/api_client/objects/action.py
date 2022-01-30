@@ -1,12 +1,13 @@
 import typing
 
-from api_client import AbstractClientObj, Content
+from .abstract import AbstractClientObj
+from ..api_types import Content
 
 
 class ActionClient(AbstractClientObj):
     """Action Object of API Client"""
-    scope = ('api_client.minimal.message',
-             'api_client.minimal.reaction')
+    scope = ('discordo.api_client.minimal.message',
+             'discordo.api_client.minimal.reaction')
 
     def __init__(self, url: str, method: typing.Optional[str] = 'GET'):
         """Create action object

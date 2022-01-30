@@ -3,11 +3,12 @@ from abc import ABC, abstractmethod
 
 import requests
 
-from api_client.objects import Content, Entity
+from ..api_types import Content, Entity
 
 
 class AbstractRequestBase(ABC):
     """Minimal API Request creator"""
+
     @abstractmethod
     def __init__(self):
         """Create API request creator object"""
