@@ -7,15 +7,15 @@ class HeadersClient(AbstractClientObj):
     scope = ('api_client.minimal.message',)
 
     authorization: str
-    user_agent: str = \
-        "Mozilla/5.0 " \
-        "(Windows NT 10.0; WOW64) " \
-        "AppleWebKit/537.36 " \
-        "(KHTML, like Gecko) " \
-        "discord/1.0.9003 " \
-        "Chrome/91.0.4472.164 " \
-        "Electron/13.4.0 " \
-        "Safari/537.36"
+    user_agent: str = (
+        "Mozilla/5.0 " 
+        "(Windows NT 10.0; WOW64) " 
+        "AppleWebKit/537.36 " 
+        "(KHTML, like Gecko) " 
+        "discord/1.0.9003 " 
+        "Chrome/91.0.4472.164 " 
+        "Electron/13.4.0 " 
+        "Safari/537.36")
 
     def __init__(self, token: str, user_agent: typing.Optional[str] = ''):
         """Create headers object
