@@ -1,13 +1,11 @@
-import typing
-
 from .abstract import AbstractClientObj
-from ..api_types import Content
+from ..api_types import RequestData, Scope
 
 
 class HeadersClient(AbstractClientObj):
     """Headers Object of API Client"""
-    scope = ('discordo.api_client.minimal.message',
-             'discordo.api_client.minimal.reaction')
+    scope: Scope = ('discordo.api_client.minimal.message',
+                    'discordo.api_client.minimal.reaction')
 
     authorization: str
     user_agent: str = (
@@ -20,19 +18,19 @@ class HeadersClient(AbstractClientObj):
         "Electron/13.4.0 "
         "Safari/537.36")
 
-    def __init__(self, token: str, user_agent: typing.Optional[str] = ''):
+    def __init__(self, token: str, user_agent: str = ''):
         """Create headers object
 
-        :param token: Authorization token :str for API
-        :param user_agent: Optional data of user-agent :str, using discord client by default
+        :param token: Authorization token for API
+        :param user_agent: Custom user-agent data, using discord client by default
         """
         self.authorization = token
         self.user_agent = user_agent or self.user_agent
 
     @property
-    def content(self) -> Content:
-        """Unique Headers content
+    def content(self) -> RequestData:
+        """Headers content
 
-        :return: Parsed :Content headers data
+        :return: Parsed headers data
         """
         return {'authorization': self.authorization, 'user-agent': self.user_agent}

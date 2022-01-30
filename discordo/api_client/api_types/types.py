@@ -1,4 +1,5 @@
 import typing
 
-Content = typing.Union[typing.Dict[str, str], str]
-Entity = typing.Dict[str, typing.Union[tuple, Content]]
+RequestData = typing.Dict[str, str]
+Scope = typing.Tuple[str, str]
+Entity = typing.TypedDict('Entity', {'scope': Scope, 'content': RequestData})

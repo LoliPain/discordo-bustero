@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 import requests
 
-from ..api_types import Content, Entity
+from ..api_types import RequestData, Entity
 
 
 class AbstractRequestBase(ABC):
@@ -16,15 +16,15 @@ class AbstractRequestBase(ABC):
     @abstractmethod
     def collect_content(
             self,
-            body: typing.Optional[str] = '',
+            body: str = '',
             **kwargs: typing.Any,
-    ) -> Content:
+    ) -> RequestData:
         """Request content collector
 
-        :param body: Data :str for creating request
-        :param kwargs: Additional context data :typing.Any of body
+        :param body: Data for creating request
+        :param kwargs: Additional context data of body
 
-        :return: Prepared for sending content :Content
+        :return: Content prepared for sending
         """
 
     @abstractmethod
@@ -32,13 +32,13 @@ class AbstractRequestBase(ABC):
             self,
             headers: Entity,
             action: Entity,
-            content: Content,
+            content: RequestData,
     ) -> requests.Request:
         """Request collector
 
-        :param headers: Headers :Entity with scope :tuple and Request.headers :dict
-        :param action: Action :Entity with scope :tuple and :dict Request.method, Request.url
+        :param headers: Headers :Entity with scope and Request.headers
+        :param action: Action :Entity with scope and Request.method, Request.url
         :param content: Content of request
 
-        :return: Compiled request :requests.Request
+        :return: Compiled request
         """

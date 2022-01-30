@@ -1,35 +1,35 @@
 import typing
 from abc import ABC, abstractmethod
 
-from ..api_types import Content, Entity
+from ..api_types import Scope, RequestData, Entity
 
 
 class AbstractClientObj(ABC):
     """Object of API Client
 
-    :var scope: Scope of object responsibility :tuple
+    :var scope: Scope of object responsibility
     """
-    scope: tuple
+    scope: Scope
 
     @abstractmethod
     def __init__(self, **kwargs: typing.Any):
         """Create client object
 
-        :param kwargs: Content-based params :typing.Any
+        :param kwargs: Object-based params
         """
 
     @property
     @abstractmethod
-    def content(self) -> Content:
+    def content(self) -> RequestData:
         """Unique content of ClientObj
 
-        :return: Formed :Content request data
+        :return: Parsed request data
         """
 
     @property
     def entity(self) -> Entity:
         """Collect attributes of ClientObj
 
-        :return: :Entity dict with ClientObj.scope :tuple and _ClientObj.content
+        :return: Entity dict with ClientObj.scope and ClientObj.content
         """
         return {'scope': self.scope, 'content': self.content}

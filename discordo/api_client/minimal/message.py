@@ -3,7 +3,7 @@ import typing
 import requests
 
 from .abstract import AbstractRequestBase
-from ..api_types import Content, Entity
+from ..api_types import RequestData, Entity
 
 
 class MinimalMessage(AbstractRequestBase):
@@ -12,7 +12,7 @@ class MinimalMessage(AbstractRequestBase):
     def __init__(self):
         """Create message object
 
-        :ivar self.message_json: Template message JSON :dict for request data
+        :ivar self.message_json: Template message JSON
         """
         self.message_json: dict = {
             "content": "",
@@ -22,18 +22,22 @@ class MinimalMessage(AbstractRequestBase):
 
     def collect_content(
             self,
-            body: typing.Optional[str] = '',
-            tts: typing.Optional[bool] = False,
-            nonce: typing.Optional[int] = 0,
-    ) -> Content:
+            body: str = '',
+            **kwargs: typing.Any,
+    ) -> RequestData:
         """Message request content collector
 
-        :param body: Plain text :str for message that should be converted to JSON object
-        :param tts: Enables :bool Text-To-Speech message
-        :param nonce: Unique ID :int for message
+        :param body: Plain text for message that should be converted to JSON object
+        :param kwargs: Contains tts and nonce
 
-        :return: Prepared for sending JSON :Content
+        :var tts: Enables Text-To-Speech for message
+        :var nonce: Unique message ID
+
+        :return: Prepared for sending JSON
         """
+        tts: bool = kwargs.get('tts', False)
+        nonce: int = kwargs.get('nonce', 0)
+
         self.message_json.update({"content": body})
         self.message_json.update({"tts": str(tts).lower()})
         self.message_json.pop("nonce") if not nonce else self.message_json.update({"nonce": str(nonce)})
@@ -43,18 +47,21 @@ class MinimalMessage(AbstractRequestBase):
             self,
             headers: Entity,
             action: Entity,
-            content: Content,
+            content: RequestData,
     ) -> requests.Request:
         """Message request content collector
         Scope comparison fail raises RuntimeError
 
-        :param headers: Headers :Entity with scope :tuple and Request.headers :dict
-        :param action: Action :Entity with scope :tuple and :dict Request.method, Request.url
-        :param content: Request.data :Content with prepared for sending JSON :dict
+        :param headers: Headers with scope and Request.headers
+        :param action: Action with scope and Request.method, Request.url
+        :param content: Request.data with prepared for sending JSON
 
-        :return: Compiled message request :requests.Request
+        :return: Compiled message request
         """
-        if {__name__}.intersection(headers.get('scope', ()), action.get('scope', ())):
-            return requests.Request(headers=headers.get('content', ()), data=content, **action.get('content', ()))
-        else:
-            raise RuntimeError(f"{__name__} not in {action['scope']} or {headers['scope']}  scope list")
+        action_data: RequestData = action.get('content', {})
+        headers_data: RequestData = headers.get('content', {})
+
+        if not {__name__}.intersection(headers.get('scope', ()), action.get('scope', ())):
+            raise RuntimeError(f"{__name__} not in {action['scope']} or {headers['scope']} scope list")
+
+        return requests.Request(headers=headers_data, data=content, **action_data)
