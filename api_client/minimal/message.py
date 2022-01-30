@@ -1,5 +1,6 @@
-import requests
 import typing
+
+import requests
 
 from api_client import AbstractRequestBase, Content, Entity
 
@@ -9,7 +10,7 @@ class MinimalMessage(AbstractRequestBase):
     def __init__(self):
         """Create message object
 
-        :ivar message_json: Template message JSON :dict for request data
+        :ivar self.message_json: Template message JSON :dict for request data
         """
         self.message_json: dict = {
             "content": "",
@@ -19,21 +20,19 @@ class MinimalMessage(AbstractRequestBase):
 
     def collect_content(
             self,
-            message_body: typing.Optional[str] = '',
-            reaction: typing.Optional[str] = '',
+            body: typing.Optional[str] = '',
             tts: typing.Optional[bool] = False,
             nonce: typing.Optional[int] = 0,
     ) -> Content:
         """Message request content collector
 
-        :param message_body: Plain text :str for message that should be converted to JSON object
-        :param reaction: (Unused)
+        :param body: Plain text :str for message that should be converted to JSON object
         :param tts: Enables :bool Text-To-Speech message
         :param nonce: Unique ID :int for message
 
-        :return: :Content with prepared for sending JSON
+        :return: Prepared for sending JSON :Content
         """
-        self.message_json.update({"content": message_body})
+        self.message_json.update({"content": body})
         self.message_json.update({"tts": str(tts).lower()})
         self.message_json.pop("nonce") if not nonce else self.message_json.update({"nonce": str(nonce)})
         return self.message_json

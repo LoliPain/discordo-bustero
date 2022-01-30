@@ -43,7 +43,7 @@
 > "content" `REQUIRED`
 > > - Plain text
 > > - Emoji:
-> > - - Default Unicode emoji: 😫
+> > - - Default Unicode emoji: 😫 (converted to http entities)
 > > - - Custom server emoji: <:1163512:811709376540049459> || <:**emoji_ID**:**server_ID**>
 
 > "nonce"

@@ -1,10 +1,12 @@
 import typing
+
 from api_client import AbstractClientObj, Content
 
 
 class ActionClient(AbstractClientObj):
     """Action Object of API Client"""
-    scope = ('api_client.minimal.message',)
+    scope = ('api_client.minimal.message',
+             'api_client.minimal.reaction')
 
     def __init__(self, url: str, method: typing.Optional[str] = 'GET'):
         """Create action object

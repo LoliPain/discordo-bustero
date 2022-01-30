@@ -1,10 +1,12 @@
 import typing
+
 from api_client import AbstractClientObj, Content
 
 
 class HeadersClient(AbstractClientObj):
     """Headers Object of API Client"""
-    scope = ('api_client.minimal.message',)
+    scope = ('api_client.minimal.message',
+             'api_client.minimal.reaction')
 
     authorization: str
     user_agent: str = (

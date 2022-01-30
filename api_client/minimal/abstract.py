@@ -1,5 +1,6 @@
 import typing
 from abc import ABC, abstractmethod
+
 import requests
 
 from api_client.objects import Content, Entity
@@ -14,17 +15,15 @@ class AbstractRequestBase(ABC):
     @abstractmethod
     def collect_content(
             self,
-            message_body: typing.Optional[str] = '',
-            reaction: typing.Optional[str] = '',
+            body: typing.Optional[str] = '',
             **kwargs: typing.Any,
     ) -> Content:
         """Request content collector
 
-        :param message_body: Plain text :str for message that should be converted to JSON object
-        :param reaction: SymID :str for direct reaction request should be converted to http-escaped string
-        :param kwargs: Additional context data of content
+        :param body: Data :str for creating request
+        :param kwargs: Additional context data :typing.Any of body
 
-        :return: :Content with prepared for sending JSON :dict or escaped SymID :str
+        :return: Prepared for sending content :Content
         """
 
     @abstractmethod
@@ -38,7 +37,7 @@ class AbstractRequestBase(ABC):
 
         :param headers: Headers :Entity with scope :tuple and Request.headers :dict
         :param action: Action :Entity with scope :tuple and :dict Request.method, Request.url
-        :param content: Request.data :Content with JSON :dict or SymID :str
+        :param content: Content of request
 
         :return: Compiled request :requests.Request
         """
