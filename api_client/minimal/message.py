@@ -36,10 +36,7 @@ class MinimalMessage(AbstractRequestBase):
 
         :return: Compiled message request :requests.Request
         """
-        if (
-                __name__ in action.get('scope', ()) and
-                __name__ in headers.get('scope', ())
-        ):
+        if {__name__}.intersection(headers.get('scope', ()), action.get('scope', ())):
             return requests.Request(headers=headers.get('content', ()), data=content, **action.get('content', ()))
         else:
             raise RuntimeError(f"{__name__} not in {action['scope']} or {headers['scope']}  scope list")
