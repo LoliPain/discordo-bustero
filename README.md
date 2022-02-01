@@ -33,7 +33,7 @@ Discordo default case after first launch is:
 > >
 > > 1.3. Server have [terms of use checkbox](https://lolipa.in/static/img/Discord_oqV6LFqtaK.png)? Not a problem! Just tell Discordo about it now
 > >
-> > 1.4. Greedy server mod bots want to send a [emoji reaction](https://lolipa.in/static/img/Discord_gTAHHw0ZWJ.png)? Ok. [*Where (message ID)*](https://github.com/P2LOVE/discordo-bustero/wiki/Developer-mode-guide#message-id) and [*What (emoji ID)*](https://github.com/P2LOVE/discordo-bustero/wiki/Developer-mode-guide#emoji-id)?
+> > 1.4. Greedy server mod bots want to send an [emoji reaction](https://lolipa.in/static/img/Discord_gTAHHw0ZWJ.png)? Ok. [*Where (message ID)*](https://github.com/P2LOVE/discordo-bustero/wiki/Developer-mode-guide#message-id) and [*What (emoji ID)*](https://github.com/P2LOVE/discordo-bustero/wiki/Developer-mode-guide#emoji-id)?
 > > 
 > > 1.5. What? **CAPTCHA???** Chill, and read [that article](https://github.com/P2LOVE/discordo-bustero/wiki/Captcha-guide)!
  
@@ -62,4 +62,4 @@ Discordo **always happy** to get new contributors, if you want support developme
 
 ## Licence
 
-Discordo Bustero enjoying **MIT**! Check an [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).
+Discordo Bustero enjoying **MIT**! Check a [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).
