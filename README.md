@@ -40,4 +40,4 @@ Discordo **always happy** to get new contributors, if you want support developme
 
 ## Licence
 
-Discordo Bustero enjoying **MIT**! Check an [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).
+Discordo Bustero enjoying **MIT**! Check a [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).
