@@ -9,19 +9,8 @@ from ..api_types import RequestData, Entity
 class MinimalMessage(AbstractRequestBase):
     """Minimal Message request creator"""
 
-    def __init__(self):
-        """Create message object
-
-        :ivar self.message_json: Template message JSON
-        """
-        self.message_json: dict = {
-            "content": "",
-            "nonce": "",
-            "tts": "False"
-        }
-
+    @staticmethod
     def collect_content(
-            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -35,16 +24,22 @@ class MinimalMessage(AbstractRequestBase):
 
         :return: Prepared for sending JSON
         """
+        message_json: dict = {
+            "content": "",
+            "nonce": "",
+            "tts": "False"
+        }
+
         tts: bool = kwargs.get('tts', False)
         nonce: int = kwargs.get('nonce', 0)
 
-        self.message_json.update({"content": body})
-        self.message_json.update({"tts": str(tts).lower()})
-        self.message_json.pop("nonce") if not nonce else self.message_json.update({"nonce": str(nonce)})
-        return self.message_json
+        message_json.update({"content": body})
+        message_json.update({"tts": str(tts).lower()})
+        message_json.pop("nonce") if not nonce else message_json.update({"nonce": str(nonce)})
+        return message_json
 
+    @staticmethod
     def collect_request(
-            self,
             headers: Entity,
             action: Entity,
             content: RequestData,
