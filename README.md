@@ -27,7 +27,7 @@ Development Experimental is mix of Pre-Alpha code and nightly builds branch
 There's:
 - [x] Possible critical issues
 - [x] Experimental features
-- [x] Workfiles in repo _(like devlog* and roadmap*)_
+- [x] Logfiles in repo _(like devlog* and roadmap*)_
 - [x] Builds *(nightly)*
 
 #### *[devlogs.md](devlogs.md) `researching notes`
@@ -44,4 +44,4 @@ Discordo **NOT always happy** to get new contributors in devexp branch, if you w
 
 ## Licence
 
-Discordo Bustero enjoying **MIT**! Check an [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).
+Discordo Bustero enjoying **MIT**! Check a [licence](LICENSE) file itself or [TLDR](https://tldrlegal.com/license/mit-license).

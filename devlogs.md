@@ -48,7 +48,7 @@
 
 > "nonce"
 > > - String:
-> > - - Unique randomID for event that preventing double intercations *(??)*
+> > - - Unique randomID for event that preventing double interactions *(??)*
 
 > "tts" `REQUIRED`
 > > - Bool
