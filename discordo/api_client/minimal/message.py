@@ -48,7 +48,7 @@ class MinimalMessage(AbstractRequestBase):
             content: RequestData,
     ) -> requests.Request:
         """Message request content collector
-        Scope comparison fail raises RuntimeError
+        Request objects scope validation
 
         :param headers: Headers with scope and Request.headers
         :param action: Action with scope and Request.method, Request.url

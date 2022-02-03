@@ -1,3 +1,3 @@
-from .types import RequestData, Scope, Entity
+from .types import RequestData, Scope, Entity, Proxy
 
-__all__ = ("RequestData", "Scope", "Entity")
+__all__ = ("RequestData", "Scope", "Entity", "Proxy")
