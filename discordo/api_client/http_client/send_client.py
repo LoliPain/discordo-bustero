@@ -14,7 +14,7 @@ class RequestStrict:
     :var mode_list: Links from context to strict
     """
     mode_list = {
-        'reaction': ('PUT', ),
+        'reaction': ('PUT',),
         'message': ('POST', 'DATA'),
         'agreement': ('PUT', 'DATA'),
     }
@@ -79,7 +79,3 @@ class SendHttpClient(AbstractHttpClient):
         )
 
         return resp.status_code
-
-
-
-
