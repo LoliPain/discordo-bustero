@@ -1,4 +1,3 @@
-import typing
 from abc import ABC, abstractmethod
 
 from ..api_types import Scope, RequestData, Entity
@@ -12,11 +11,8 @@ class AbstractClientObj(ABC):
     scope: Scope
 
     @abstractmethod
-    def __init__(self, **kwargs: typing.Any):
-        """Create client object
-
-        :param kwargs: Object-based params
-        """
+    def __init__(self):
+        """Create client object"""
 
     @property
     @abstractmethod

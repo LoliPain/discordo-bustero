@@ -5,6 +5,9 @@ import requests
 from .abstract import AbstractRequestBase
 from ..api_types import RequestData, Entity
 
+if typing.TYPE_CHECKING:
+    __class__: typing.Type
+
 
 class MinimalMessage(AbstractRequestBase):
     """Minimal Message request creator"""
@@ -56,7 +59,12 @@ class MinimalMessage(AbstractRequestBase):
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
 
-        if not {__name__}.intersection(headers.get('scope', ()), action.get('scope', ())):
-            raise RuntimeError(f"{__name__} not in {action['scope']} or {headers['scope']} scope list")
+        if (
+                not {__class__.__name__}.intersection(
+                    headers.get('scope', ()),
+                    action.get('scope', ()),
+                )
+        ):
+            raise RuntimeError(f"{__class__.__name__} not in {action['scope']} or {headers['scope']} scope list")
 
         return requests.Request(headers=headers_data, data=content, **action_data)

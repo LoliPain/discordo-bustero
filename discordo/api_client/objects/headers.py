@@ -1,11 +1,11 @@
 from .abstract import AbstractClientObj
-from ..api_types import RequestData, Scope
+from ..api_types import RequestData
 
 
 class HeadersClient(AbstractClientObj):
     """Headers Object of API Client"""
-    scope: Scope = ('discordo.api_client.minimal.message',
-                    'discordo.api_client.minimal.reaction')
+    scope = ('MinimalMessage',
+             'MinimalReaction')
 
     authorization: str
     user_agent: str = (

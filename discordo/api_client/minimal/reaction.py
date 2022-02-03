@@ -7,6 +7,9 @@ import requests
 from .abstract import AbstractRequestBase
 from ..api_types import RequestData, Entity
 
+if typing.TYPE_CHECKING:
+    __class__: typing.Type
+
 CUSTOM_EMOJI_PATTERN: str = r"([^.\: ]+:[0-9]+$)"
 EMOJI_PATTERN: str = (
     "^(["
@@ -70,7 +73,12 @@ class MinimalReaction(AbstractRequestBase):
 
         action_data.update({'url': f"{action_data['url']}/{content['emoji']}/@me"})
 
-        if not {__name__}.intersection(headers.get('scope', ()), action.get('scope', ())):
-            raise RuntimeError(f"{__name__} not in {action['scope']} or {headers['scope']} scope list")
+        if (
+                not {__class__.__name__}.intersection(
+                    headers.get('scope', ()),
+                    action.get('scope', ()),
+                )
+        ):
+            raise RuntimeError(f"{__class__.__name__} not in {action['scope']} or {headers['scope']} scope list")
 
         return requests.Request(headers=headers_data, **action_data)
