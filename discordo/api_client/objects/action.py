@@ -5,7 +5,10 @@ from ..api_types import RequestData
 class ActionClient(AbstractClientObj):
     """Action Object of API Client"""
     scope = ('MinimalMessage',
-             'MinimalReaction')
+             'MinimalReaction',
+             'AdvancedConfirmAgreement',
+             'AdvancedAcceptInvite',
+             'AdvancedGetAgreement')
 
     def __init__(self, url: str, method: str = 'GET'):
         """Create action object

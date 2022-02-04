@@ -137,3 +137,21 @@
 	}]
 }
 
+# Server invite research
+> BaseURL
+>
+> #### Accept server invite
+>
+> > https://discord.com/api/v9/invites/masafinance
+> > > POST /api/v9/invites/{invite_code}
+
+--------
+
+> Researching response
+> #### Get guiild id
+> > {
+	"guild": {
+		"id": "848996376896602163",
+	},
+}
+

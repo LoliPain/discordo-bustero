@@ -5,7 +5,10 @@ from ..api_types import RequestData
 class HeadersClient(AbstractClientObj):
     """Headers Object of API Client"""
     scope = ('MinimalMessage',
-             'MinimalReaction')
+             'MinimalReaction',
+             'AdvancedConfirmAgreement',
+             'AdvancedAcceptInvite',
+             'AdvancedGetAgreement')
 
     authorization: str
     user_agent: str = (

@@ -1,3 +1,4 @@
+import json
 import typing
 
 import requests
@@ -39,7 +40,7 @@ class MinimalMessage(AbstractRequestBase):
         message_json.update({"content": body})
         message_json.update({"tts": str(tts).lower()})
         message_json.pop("nonce") if not nonce else message_json.update({"nonce": str(nonce)})
-        return message_json
+        return {'message': json.dumps(message_json)}
 
     @staticmethod
     def collect_request(
@@ -52,12 +53,13 @@ class MinimalMessage(AbstractRequestBase):
 
         :param headers: Headers with scope and Request.headers
         :param action: Action with scope and Request.method, Request.url
-        :param content: Request.data with prepared for sending JSON
+        :param content: Request.data with prepared for sending JSON message
 
         :return: Compiled message request
         """
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
+        headers_data.update({'Content-type': 'application/json'})
 
         if (
                 not {__class__.__name__}.intersection(
@@ -67,4 +69,4 @@ class MinimalMessage(AbstractRequestBase):
         ):
             raise RuntimeError(f"{__class__.__name__} not in {action['scope']} or {headers['scope']} scope list")
 
-        return requests.Request(headers=headers_data, data=content, **action_data)
+        return requests.Request(headers=headers_data, data=content['message'], **action_data)

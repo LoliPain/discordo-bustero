@@ -1,13 +1,13 @@
 # Requests base
-- [ ] API Request class 
+- [x] API Request class
 - - [x] Send message def 
-- - [x] Send reaction def `<- devexp`
+- - [x] Send reaction def 
 
 ---------
 
 # Advanced requests
-- [ ] Extended confirmation on server
-- [ ] Server joining
+- [x] Extended confirmation on server
+- [x] Server joining `<- devexp`
 
 ---------
 

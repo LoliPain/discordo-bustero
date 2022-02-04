@@ -1,3 +1,4 @@
+from .advanced import AdvancedAcceptInvite, AdvancedConfirmAgreement, AdvancedGetAgreement
 from .http_client import SendHttpClient, GetHttpClient
 from .minimal import MinimalMessage, MinimalReaction
 from .objects import HeadersClient, ActionClient
@@ -8,5 +9,8 @@ __all__ = (
     "MinimalMessage",
     "MinimalReaction",
     "HeadersClient",
-    "ActionClient"
+    "ActionClient",
+    "AdvancedAcceptInvite",
+    "AdvancedConfirmAgreement",
+    "AdvancedGetAgreement",
 )

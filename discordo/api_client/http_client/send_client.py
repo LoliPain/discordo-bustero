@@ -17,6 +17,7 @@ class RequestStrict:
         'reaction': ('PUT',),
         'message': ('POST', 'DATA'),
         'agreement': ('PUT', 'DATA'),
+        'invite': ('POST',)
     }
 
     @staticmethod
@@ -77,5 +78,7 @@ class SendHttpClient(AbstractHttpClient):
             request.prepare(),
             proxies=self.proxies,
         )
+        if not kwargs.get('no_save', False):
+            self.get_data = resp.text
 
         return resp.status_code
