@@ -9,9 +9,9 @@ from ..api_types import RequestData, Entity
 class AbstractRequestBase(ABC):
     """Minimal API Request creator"""
 
-    @staticmethod
     @abstractmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -23,12 +23,12 @@ class AbstractRequestBase(ABC):
         :return: Content prepared for sending
         """
 
-    @staticmethod
     @abstractmethod
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData,
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """Request collector
 
@@ -38,3 +38,10 @@ class AbstractRequestBase(ABC):
 
         :return: Compiled request
         """
+
+    def __init__(self):
+        """Create client method
+
+        :ivar self.content: Share content between methods of instance
+        """
+        self.content = {}

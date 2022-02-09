@@ -29,8 +29,8 @@ class AdvancedAcceptInvite(AbstractAdvancedRequest):
 
         return action
 
-    @staticmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -48,14 +48,15 @@ class AdvancedAcceptInvite(AbstractAdvancedRequest):
         )
         if invite_code:
             if invite_code.group(2):
-                return {'code': invite_code.group(2)}
+                self.content = {'code': invite_code.group(2)}
+                return self.content
         raise RuntimeError(f'Invite URL {body} is not valid')
 
-    @staticmethod
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData,
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """Accept invite request collector
 
@@ -65,6 +66,8 @@ class AdvancedAcceptInvite(AbstractAdvancedRequest):
 
         :return: Compiled join server request
         """
+        content = content or self.content
+
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
 

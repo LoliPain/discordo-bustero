@@ -34,8 +34,8 @@ class AdvancedConfirmAgreement(AbstractAdvancedRequest):
 
         return action
 
-    @staticmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -49,13 +49,14 @@ class AdvancedConfirmAgreement(AbstractAdvancedRequest):
         del body_['description']
         body_['form_fields'][0]['response'] = 'true'
 
-        return {'agreement': json.dumps(body_)}
+        self.content = {'agreement': json.dumps(body_)}
+        return self.content
 
-    @staticmethod
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """Confirmation request collector
         Request objects scope validation
@@ -66,6 +67,8 @@ class AdvancedConfirmAgreement(AbstractAdvancedRequest):
 
         :return: Compiled agreement request
         """
+        content = content or self.content
+
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
         headers_data.update({'Content-type': 'application/json'})

@@ -30,6 +30,7 @@ class AbstractHttpClient(ABC):
         """Create client session
 
         :ivar self.proxies: Instance proxy server
+        :ivar self.get_data: Share response data between instance methods
         :ivar self.s: Instance session
         """
         self.proxies: Proxy = {}

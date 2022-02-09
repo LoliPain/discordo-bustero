@@ -32,8 +32,8 @@ EMOJI_PATTERN: str = (
 class MinimalReaction(AbstractRequestBase):
     """Minimal Reaction request creator"""
 
-    @staticmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -49,15 +49,16 @@ class MinimalReaction(AbstractRequestBase):
         pattern: re.Pattern = re.compile(f'^{CUSTOM_EMOJI_PATTERN}|{EMOJI_PATTERN}$', re.UNICODE)
 
         if pattern.match(body):
-            return {'emoji': quote_plus(body)}
+            self.content = {'emoji': quote_plus(body)}
+            return self.content
         else:
             raise RuntimeError(f"Emoji {body} isn't valid emoji pattern. Excepted unicode or NAME:ID")
 
-    @staticmethod
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData,
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """PUT Emoji reaction request collector
         Request objects scope validation
@@ -68,6 +69,8 @@ class MinimalReaction(AbstractRequestBase):
 
         :return: Compiled PUT reaction request
         """
+        content = content or self.content
+
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
 

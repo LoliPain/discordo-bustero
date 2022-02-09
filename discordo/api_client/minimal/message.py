@@ -13,8 +13,8 @@ if typing.TYPE_CHECKING:
 class MinimalMessage(AbstractRequestBase):
     """Minimal Message request creator"""
 
-    @staticmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -40,13 +40,15 @@ class MinimalMessage(AbstractRequestBase):
         message_json.update({"content": body})
         message_json.update({"tts": str(tts).lower()})
         message_json.pop("nonce") if not nonce else message_json.update({"nonce": str(nonce)})
-        return {'message': json.dumps(message_json)}
 
-    @staticmethod
+        self.content = {'message': json.dumps(message_json)}
+        return self.content
+
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData,
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """Message request content collector
         Request objects scope validation
@@ -57,6 +59,8 @@ class MinimalMessage(AbstractRequestBase):
 
         :return: Compiled message request
         """
+        content = content or self.content
+
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
         headers_data.update({'Content-type': 'application/json'})

@@ -28,8 +28,8 @@ class AdvancedGetAgreement(AbstractAdvancedRequest):
 
         return action
 
-    @staticmethod
     def collect_content(
+            self,
             body: str = '',
             **kwargs: typing.Any,
     ) -> RequestData:
@@ -41,13 +41,14 @@ class AdvancedGetAgreement(AbstractAdvancedRequest):
         """
         body_: int = int(body)
 
-        return {'guild_id': str(body_)}
+        self.content = {'guild_id': str(body_)}
+        return self.content
 
-    @staticmethod
     def collect_request(
+            self,
             headers: Entity,
             action: Entity,
-            content: RequestData,
+            content: typing.Optional[RequestData] = None,
     ) -> requests.Request:
         """Get server agreement request collector
 
@@ -57,6 +58,8 @@ class AdvancedGetAgreement(AbstractAdvancedRequest):
 
         :return: Compiled get agreement request
         """
+        content = content or self.content
+
         action_data: RequestData = action.get('content', {})
         headers_data: RequestData = headers.get('content', {})
 
