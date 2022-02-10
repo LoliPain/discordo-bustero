@@ -7,13 +7,13 @@
 
 # Advanced requests
 - [x] Extended confirmation on server
-- [x] Server joining `<- devexp`
+- [x] Server joining
 
 ---------
 
 # Token extraction 
-- [ ] Extract token from log:pass pair
-- - [ ] Validation for extracted token
+- [x] Extract token from log:pass pair `<- devexp`
+- - [x] Validation for extracted token
 
 ---------
 

@@ -17,7 +17,8 @@ class RequestStrict:
         'reaction': ('PUT',),
         'message': ('POST', 'DATA'),
         'agreement': ('PUT', 'DATA'),
-        'invite': ('POST',)
+        'invite': ('POST',),
+        'login': ('POST', 'DATA'),
     }
 
     @staticmethod

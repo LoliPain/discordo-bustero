@@ -4,3 +4,6 @@
 
 # pep 3147
 **/__pycache__/*.pyc
+
+# sensitive test data
+CONFIG.py
