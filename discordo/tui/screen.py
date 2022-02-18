@@ -5,7 +5,10 @@ from .params import ParamUIElement
 
 
 class TerminalUIScreen(AbstractUIBase):
+    """Collect of params"""
+
     def __init__(self):
+        """Implement all elems"""
         self.link = ParamUIElement()
         self.captcha = ParamUIElement()
         self.user = ParamUIElement()
@@ -15,6 +18,12 @@ class TerminalUIScreen(AbstractUIBase):
         self.proxy = ParamUIElement()
 
     def get_text(self, user_data: dict) -> str:
+        """Return formatted full screen text
+
+        :param user_data: Escaped collection of all params data
+
+        :return: Colorama string
+        """
         screen_data = f'{colorama.Back.MAGENTA}{colorama.Fore.BLACK}Discordo-Bustero-Configo!\n\n'
         screen_data += self.link.get_text(user_data['link']) + '\n'
         screen_data += self.captcha.get_text(user_data['captcha']) + '\n'
