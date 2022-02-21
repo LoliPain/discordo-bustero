@@ -1,3 +1,5 @@
+import copy
+
 import colorama
 
 from .abstract import AbstractUIBase
@@ -24,15 +26,16 @@ class TerminalUIScreen(AbstractUIBase):
 
         :return: Colorama string
         """
+        _user_data = copy.deepcopy(user_data)
         colorama.init(autoreset=True)
         screen_data = f'{colorama.Fore.BLACK}Discordo-Bustero-Configo!\n\n'
-        screen_data += self.link.get_text(user_data['link']) + '\n'
-        screen_data += self.captcha.get_text(user_data['captcha']) + '\n'
-        screen_data += self.user.get_text(user_data['user']) + '\n'
-        screen_data += self.dictionary.get_text(user_data['dictionary']) + '\n'
-        screen_data += self.reaction.get_text(user_data['reaction']) + '\n'
-        screen_data += self.confirmation.get_text(user_data['confirmation']) + '\n'
-        screen_data += self.proxy.get_text(user_data['proxy']) + '\n'
-        if user_data['started']:
+        screen_data += self.link.get_text(_user_data['link']) + '\n'
+        screen_data += self.captcha.get_text(_user_data['captcha']) + '\n'
+        screen_data += self.user.get_text(_user_data['user']) + '\n'
+        screen_data += self.dictionary.get_text(_user_data['dictionary']) + '\n'
+        screen_data += self.reaction.get_text(_user_data['reaction']) + '\n'
+        screen_data += self.confirmation.get_text(_user_data['confirmation']) + '\n'
+        screen_data += self.proxy.get_text(_user_data['proxy']) + '\n'
+        if _user_data['started']:
             screen_data += f'{colorama.Fore.BLACK}Bustero in progresso!'
         return screen_data
