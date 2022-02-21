@@ -24,7 +24,8 @@ class TerminalUIScreen(AbstractUIBase):
 
         :return: Colorama string
         """
-        screen_data = f'{colorama.Back.MAGENTA}{colorama.Fore.BLACK}Discordo-Bustero-Configo!\n\n'
+        colorama.init(autoreset=True)
+        screen_data = f'{colorama.Fore.BLACK}Discordo-Bustero-Configo!\n\n'
         screen_data += self.link.get_text(user_data['link']) + '\n'
         screen_data += self.captcha.get_text(user_data['captcha']) + '\n'
         screen_data += self.user.get_text(user_data['user']) + '\n'
@@ -33,5 +34,5 @@ class TerminalUIScreen(AbstractUIBase):
         screen_data += self.confirmation.get_text(user_data['confirmation']) + '\n'
         screen_data += self.proxy.get_text(user_data['proxy']) + '\n'
         if user_data['started']:
-            screen_data += f'{colorama.Back.MAGENTA}{colorama.Fore.BLACK}Bustero in progresso!'
+            screen_data += f'{colorama.Fore.BLACK}Bustero in progresso!'
         return screen_data

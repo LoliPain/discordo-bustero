@@ -12,13 +12,13 @@
 ---------
 
 # Token extraction 
-- [x] Extract token from log:pass pair `<- devexp`
+- [x] Extract token from log:pass pair 
 - - [x] Validation for extracted token
 
 ---------
 
 # Building & Deploy
-- [ ] Init setting 
+- [~] Init setting `<- devexp`
 - - [ ] Server setting
 - - - [ ] Link
 - - - [ ] Dictionary (Optional)

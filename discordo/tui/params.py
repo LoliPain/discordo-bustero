@@ -10,16 +10,17 @@ class ParamUIElement(AbstractUIBase):
         """Create elem string"""
         self.elem: str = '{param}: {value}'
 
-    def get_text(self, user_data: dict) -> str:
+    def get_text(self, elem_data: dict) -> str:
         """Return formatted param
 
-        :param user_data: Context data
+        :param elem_data: Context data
 
         :return: Colorama string
         """
-        user_data['param'] = colorama.Fore.BLUE + user_data['param']
-        user_data['value'] = colorama.Fore.RED + user_data['value']
-        elem = self.elem.format(**user_data)
-        if user_data.get('selected'):
-            elem += f'{colorama.Fore.MAGENTA}{colorama.Back.BLUE} <-- '
+        colorama.init(autoreset=True)
+        elem_data['param'] = colorama.Fore.BLUE + elem_data['param']
+        elem_data['value'] = colorama.Fore.RED + elem_data['value']
+        elem = self.elem.format(**elem_data)
+        if elem_data.get('selected'):
+            elem += f'{colorama.Fore.MAGENTA} <-- '
         return elem
