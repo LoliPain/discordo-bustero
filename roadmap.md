@@ -18,7 +18,7 @@
 ---------
 
 # Building & Deploy
-- [~] Init setting `<- devexp`
+- [x] Init setting 
 - - [x] Server setting
 - - - [x] Link
 - - - [x] Dictionary (Optional)
@@ -28,4 +28,8 @@
 - - [x] User setting
 - - - [x] Log:Pass 
 - - - [x] Captcha & AntiCaptcha
+- [x] Tests `<- devexp`
+- - [ ] Makefile
+- - [ ] Deps
+- [ ] Run discordo
 

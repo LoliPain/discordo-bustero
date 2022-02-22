@@ -15,7 +15,7 @@ class AdvancedConfirmAgreement(AbstractAdvancedRequest):
 
     @staticmethod
     def rebuild_action(
-            action: Entity,
+            action: typing.Optional[Entity] = None,
             **kwargs: typing.Any,
     ) -> Entity:
         """Rebuild PUT action into terms of use agreement
@@ -25,6 +25,8 @@ class AdvancedConfirmAgreement(AbstractAdvancedRequest):
 
         :return: New confirmation agreement url
         """
+        if not action:
+            action = {'scope': (__class__.__name__, ), 'content': {}}
         guild_id: int = int(kwargs.get('guild_id', ''))
         action['content']['method'] = 'PUT'
         action['content']['url'] = (

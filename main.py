@@ -7,7 +7,7 @@ from discordo import ConfigIO, Screen
 from discordo import ConfigStore
 from discordo import LOGGER_FORMAT
 from discordo import TerminalUIScreen
-from first_launch import first_launch
+from discordo.first_launch import first_launch
 
 s = Screen()
 store = ConfigStore()
@@ -131,4 +131,7 @@ if __name__ == '__main__':
     initial_store(config_data)
     logging.debug(f'Store collected, proceed to rebuilding')
     rebuild_file_store()
-    logging.debug(f'Store rebuild with files')
+    logging.debug(f'Store rebuild with files '
+                  f'{store.user.collect} '
+                  f'{store.dictionary.collect} '
+                  f'{store.proxy.collect}')

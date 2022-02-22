@@ -11,7 +11,7 @@ class AbstractAdvancedRequest(AbstractRequestBase, ABC):
     @staticmethod
     @abstractmethod
     def rebuild_action(
-            action: Entity,
+            action: typing.Optional[Entity] = None,
             **kwargs: typing.Any,
     ) -> Entity:
         """Rebuild action URL due to mode

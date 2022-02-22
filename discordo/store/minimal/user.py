@@ -6,7 +6,7 @@ from ..abstract import AbstractStoreBase
 class UsersParam(AbstractStoreBase):
     def __init__(self):
         """Create config param"""
-        self.file: typing.Union[str, list] = 'users.txt'
+        self.file: typing.Union[str, list] = ''
         self.mixed: bool = False
 
     def set_data(

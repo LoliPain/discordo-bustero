@@ -15,7 +15,7 @@ class AdvancedAcceptInvite(AbstractAdvancedRequest):
 
     @staticmethod
     def rebuild_action(
-            action: Entity,
+            action: typing.Optional[Entity] = None,
             **kwargs: typing.Any,
     ) -> Entity:
         """Rebuild action for server invite
@@ -24,6 +24,8 @@ class AdvancedAcceptInvite(AbstractAdvancedRequest):
 
         :return: Server invite action
         """
+        if not action:
+            action = {'scope': (__class__.__name__,), 'content': {}}
         action['content']['method'] = 'POST'
         action['content']['url'] = 'https://discord.com/api/v9/invites'
 

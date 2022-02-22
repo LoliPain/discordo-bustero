@@ -14,7 +14,7 @@ class AdvancedGetAgreement(AbstractAdvancedRequest):
 
     @staticmethod
     def rebuild_action(
-            action: Entity,
+            action: typing.Optional[Entity] = None,
             **kwargs: typing.Any,
     ) -> Entity:
         """Rebuild GET action into get server agreement
@@ -23,6 +23,8 @@ class AdvancedGetAgreement(AbstractAdvancedRequest):
 
         :return: Get agreement action
         """
+        if not action:
+            action = {'scope': (__class__.__name__,), 'content': {}}
         action['content']['method'] = 'GET'
         action['content']['url'] = 'https://discord.com/api/v9/guilds'
 
