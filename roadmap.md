@@ -19,13 +19,13 @@
 
 # Building & Deploy
 - [~] Init setting `<- devexp`
-- - [ ] Server setting
-- - - [ ] Link
-- - - [ ] Dictionary (Optional)
-- - - [ ] Channel ID (Optional)
-- - - [ ] Confirmation (Checkbox)
-- - - [ ] Reaction message ID & SymID (Optional)
-- - [ ] User setting
-- - - [ ] Log:Pass 
-- - - [ ] Captcha & AntiCaptcha
+- - [x] Server setting
+- - - [x] Link
+- - - [x] Dictionary (Optional)
+- - - [x] Channel ID (Optional)
+- - - [x] Confirmation (Checkbox)
+- - - [x] Reaction message ID & SymID (Optional)
+- - [x] User setting
+- - - [x] Log:Pass 
+- - - [x] Captcha & AntiCaptcha
 
