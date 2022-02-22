@@ -8,7 +8,7 @@ CONFIG_PRESET: dict = {
         "value": "*",
     },
     "captcha": {
-        "param": "Anti-Captcha",
+        "param": "Anti-Captcha token",
         "value": "*",
     },
     "user": {
@@ -17,11 +17,19 @@ CONFIG_PRESET: dict = {
     },
     "dictionary": {
         "param": "Path to words list",
-        "value": "dict.txt",
+        "value": "*",
+    },
+    "channel_id": {
+        "param": "ID of channel where to send messages",
+        "value": "*"
     },
     "reaction": {
         "param": "Emoji reaction setting",
         "value": "*",
+    },
+    "message_id": {
+        "param": "ID of message for reaction",
+        "value": "*"
     },
     "confirmation": {
         "param": "Server agreement checkbox",
@@ -33,6 +41,8 @@ CONFIG_PRESET: dict = {
     },
     "started": False,
 }
+
+LOGGER_FORMAT = '| %(filename)s || %(message)s'
 
 
 class ConfigIO:

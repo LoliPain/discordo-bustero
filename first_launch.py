@@ -36,7 +36,7 @@ def edit_param(user_data: dict, param: str) -> dict:
     """
     select_param(user_data, param)
     s.append(f'\n\nDo you want to use default param?'
-             f'\n* means set empty value')
+             f'\n* equals leaving empty value')
     if not s.agreement():
         user_data[param]['value'] = input(f'\nNow specify the {param} value: ')
     unselect_param(user_data, param)
@@ -70,7 +70,11 @@ def initial_setup() -> dict:
     user_data = edit_param(user_data, 'captcha')
     user_data = edit_param(user_data, 'user')
     user_data = edit_param(user_data, 'dictionary')
+    if user_data['dictionary']['value'] != '*':
+        user_data = edit_param(user_data, 'channel_id')
     user_data = edit_param(user_data, 'reaction')
+    if user_data['reaction']['value'] != '*':
+        user_data = edit_param(user_data, 'message_id')
     user_data = edit_param(user_data, 'confirmation')
     user_data = edit_param(user_data, 'proxy')
     return user_data

@@ -15,7 +15,7 @@ class LinkParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
+        :param user_data: Join URL
         :param kwargs: Additional data
         """
         self.link = user_data

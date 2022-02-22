@@ -6,8 +6,8 @@ from ..abstract import AbstractStoreBase
 class ReactionParam(AbstractStoreBase):
     def __init__(self):
         """Create config param"""
-        self.message: str = ''
         self.emoji: str = ''
+        self.message: str = ''
 
     def set_data(
             self,
@@ -16,8 +16,8 @@ class ReactionParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
-        :param kwargs: Additional data
+        :param user_data: Emoji
+        :param kwargs: Message ID
         """
-        self.message = user_data
-        self.emoji = kwargs.get('emoji', '')
+        self.emoji = user_data
+        self.message = kwargs.get('message', '')

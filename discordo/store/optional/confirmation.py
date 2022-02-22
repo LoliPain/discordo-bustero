@@ -15,7 +15,7 @@ class ConfirmationParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
+        :param user_data: Server checkbox
         :param kwargs: Additional data
         """
         self.confirmation = user_data

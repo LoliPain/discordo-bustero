@@ -6,7 +6,7 @@ from ..abstract import AbstractStoreBase
 class UsersParam(AbstractStoreBase):
     def __init__(self):
         """Create config param"""
-        self.file: str = 'users.txt'
+        self.file: typing.Union[str, list] = 'users.txt'
         self.mixed: bool = False
 
     def set_data(
@@ -16,8 +16,8 @@ class UsersParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
-        :param kwargs: Additional data
+        :param user_data: File name or value
+        :param kwargs: Is file contains log:pass
         """
         self.file = user_data
         self.mixed = kwargs.get('mixed', False)

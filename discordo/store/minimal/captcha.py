@@ -15,7 +15,7 @@ class CaptchaParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
+        :param user_data: Captcha token
         :param kwargs: Additional data
         """
         self.token = user_data

@@ -6,7 +6,7 @@ from ..abstract import AbstractStoreBase
 class ProxyParam(AbstractStoreBase):
     def __init__(self):
         """Create config param"""
-        self.proxy: str = ''
+        self.file: str = ''
 
     def set_data(
             self,
@@ -15,7 +15,7 @@ class ProxyParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
+        :param user_data: File name
         :param kwargs: Additional data
         """
-        self.proxy = user_data
+        self.file = user_data

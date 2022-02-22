@@ -6,7 +6,7 @@ from ..abstract import AbstractStoreBase
 class DictionaryParam(AbstractStoreBase):
     def __init__(self):
         """Create config param"""
-        self.dictionary: str = 'dict.txt'
+        self.file: str = 'dict.txt'
         self.channel: str = ''
 
     def set_data(
@@ -16,8 +16,8 @@ class DictionaryParam(AbstractStoreBase):
     ):
         """Set passed data on param element
 
-        :param user_data: Name and value
-        :param kwargs: Additional data
+        :param user_data: File name or value
+        :param kwargs: Channel ID
         """
-        self.dictionary = user_data
+        self.file = user_data
         self.channel = kwargs.get('channel', '')

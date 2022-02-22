@@ -6,4 +6,7 @@
 **/__pycache__/*.pyc
 
 # sensitive test data
-CONFIG.py
+config.json
+dict.txt
+users.txt
+proxy.txt
