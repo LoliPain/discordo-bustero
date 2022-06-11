@@ -1,8 +1,26 @@
 kind: pipeline
+type: docker
 name: pytest
 
 steps:
-- name: test
-  image: python
+- name: pytest-no-sensitive
+  image: python:3.10.1
   commands:
-  - pytest
+  - pip install -r requirements.txt
+  - pytest -v -m "not sensitive"
+- name: pytest-sensitive
+  image: python:3.10.1
+  environment:
+    discordo_token:
+      from_secret: discord_account_token
+    discordo_log:
+      from_secret: discord_account_login
+    discordo_passwd:
+      from_secret: discord_account_password
+    discordo_proxy:
+      from_secret: proxy_sever_entry
+    discordo_captcha:
+      from_secret: anticaptcha_token
+  commands:
+    - pip install -r requirements.txt
+    - pytest -v -m "sensitive"
