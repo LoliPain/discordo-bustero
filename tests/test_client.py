@@ -13,7 +13,7 @@ def test_action_url_method():
     assert action_entity.get('content') == {'method': 'POST', 'url': 'URL'}
 
 
-@pytest.mark.objects
+@pytest.mark.object
 def test_headers_token():
     """Create example Headers"""
     headers_entity = HeadersClient('TOKEN', 'UA').entity
