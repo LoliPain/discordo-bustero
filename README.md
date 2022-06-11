@@ -3,7 +3,7 @@
 </p>
 
 # Discordo Bustero
-![](https://img.shields.io/github/commit-activity/w/P2LOVE/discordo-bustero?color=5865f2&logo=github)
+![](https://img.shields.io/github/commit-activity/w/LoliPain/discordo-bustero/devexp?color=5865f2&logo=github)
 ![](https://img.shields.io/static/v1?style=flat&logo=python&label=Python&message=>3.7&color=5865f2)
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
