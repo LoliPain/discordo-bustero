@@ -1,0 +1,8 @@
+kind: pipeline
+name: pytest
+
+steps:
+- name: test
+  image: python
+  commands:
+  - pytest

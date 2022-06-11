@@ -28,8 +28,10 @@
 - - [x] User setting
 - - - [x] Log:Pass 
 - - - [x] Captcha & AntiCaptcha
-- [x] Tests `<- devexp`
-- - [ ] Makefile
+- [x] Tests 
+- - [ ] Makefile `<- devexp`
 - - [ ] Deps
 - [ ] Run discordo
+- - [ ] Entry point
+- - [ ] Compile bin
 
