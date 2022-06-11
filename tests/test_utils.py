@@ -20,7 +20,7 @@ def test_invalid_token():
 
 @pytest.mark.captcha
 @pytest.mark.sensitive
-def test_image_captcha():
+def test_image_captcha(captcha):
     """Resolve 'smwm' captcha"""
     resolver = ResolveCaptcha(token=captcha)
     resolve = resolver.process(body='https://lolipa.in/img/discordo/captcha.png', image=True)
