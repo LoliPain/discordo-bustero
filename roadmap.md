@@ -29,8 +29,8 @@
 - - - [x] Log:Pass 
 - - - [x] Captcha & AntiCaptcha
 - [x] Tests 
-- - [ ] Makefile `<- devexp`
-- - [ ] Deps
+- - [x] Drone setup 
+- - [x] Deps `<- devexp`
 - [ ] Run discordo
 - - [ ] Entry point
 - - [ ] Compile bin
