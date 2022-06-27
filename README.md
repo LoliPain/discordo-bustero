@@ -8,8 +8,8 @@
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
 ### Development Experimental branch (Pre-Alpha)
-[![DroneCI](https://img.shields.io/drone/build/LoliPain/discordo-bustero/devexp?label=PyTest&logo=pytest&logoColor=yellow&server=http%3A%2F%2Fself.lolipa.in%3A2754&style=for-the-badge)
-](http://self.lolipa.in:2754/LoliPain/discordo-bustero)
+[![DroneCI](https://img.shields.io/drone/build/LoliPain/discordo-bustero/devexp?label=PyTest&logo=pytest&logoColor=yellow&server=https%3A%2F%2Fdrone.lolipa.in&style=for-the-badge)
+](https://drone.lolipa.in/LoliPain/discordo-bustero)
 
 Wanna be the coolest member of discord server? ***El Discordo Bustero*** will help you!
 
@@ -29,12 +29,8 @@ Development Experimental is mix of Pre-Alpha code and nightly builds branch
 There's:
 - [x] Possible critical issues
 - [x] Experimental features
-- [x] Logfiles in repo _(like devlog* and roadmap*)_
+- [x] Logs
 - [x] Builds *(nightly)*
-
-#### *[devlogs.md](devlogs.md) `researching notes`
-
-#### *[roadmap.md](roadmap.md) `release milestone`
 
 ## Contributing
 
