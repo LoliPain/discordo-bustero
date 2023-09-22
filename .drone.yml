@@ -28,3 +28,6 @@ steps:
   commands:
     - pip install -r requirements.txt
     - python -m pytest -v -m "sensitive"
+
+node:
+  type: test
