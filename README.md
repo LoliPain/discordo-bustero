@@ -12,7 +12,7 @@
 Wanna be the coolest member of discord server? ***El Discordo Bustero*** will help you!
 
 - [x] **Very** *flexible configuration*
-- [x] **Very** **unaided to join servers*
+- [x] **Very** *\*unaided to join servers*
 - [x] **Very** *strong against `MEE6` & other bots & terms of use*
 - [x] **Very** *good support custom dictionaries*
 - [x] **Very** *powerful for new method implementations* <del>*(**why?** because **very full typed** of course!)*</del>
