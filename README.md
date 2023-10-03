@@ -7,6 +7,9 @@
 ![](https://img.shields.io/static/v1?style=flat&logo=python&label=Python&message=>3.7&color=5865f2)
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
+[![DroneCI](https://img.shields.io/drone/build/LoliPain/discordo-bustero/master?label=PyTest&logo=pytest&logoColor=yellow&server=https%3A%2F%2Fdrone.lolipa.in&style=for-the-badge)
+](https://drone.lolipa.in/LoliPain/discordo-bustero)
+
 ### Master branch
 
 Wanna be the coolest member of discord server? ***El Discordo Bustero*** will help you!
