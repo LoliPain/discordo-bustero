@@ -2,13 +2,18 @@
     <img src="https://lolipa.in/static/img/discordo-logo.svg" width="320px">
 </p>
 
-# Discordo Bustero
 ![](https://img.shields.io/github/commit-activity/y/LoliPain/discordo-bustero/master?color=5865f2&logo=github)
+# ☠  Discordo Bustero
 ![](https://img.shields.io/static/v1?style=flat&logo=python&label=Python&message=>3.7&color=5865f2)
 ![](https://img.shields.io/github/license/P2LOVE/discordo-bustero?color=5865f2)
 
-[![DroneCI](https://img.shields.io/drone/build/LoliPain/discordo-bustero/master?label=PyTest&logo=pytest&logoColor=yellow&server=https%3A%2F%2Fdrone.lolipa.in&style=for-the-badge)
-](https://drone.lolipa.in/LoliPain/discordo-bustero)
+[![DroneCI](https://img.shields.io/drone/build/LoliPain/discordo-bustero/master?label=PyTest&logo=pytest&logoColor=yellow&server=https%3A%2F%2Fdrone.lolipa.in&style=for-the-badge)](https://drone.lolipa.in/LoliPain/discordo-bustero)
+
+##### After a while of inactivity, I decided to grave ☠  the development of **Discordo Bustero** due to decreasing demand and frequent changes in the Discord itself.
+##### If theres significant interest in the future, I may consider resurrecting the project. 
+
+###### *Thx xoxo~*
+
 
 ### Master branch
 
